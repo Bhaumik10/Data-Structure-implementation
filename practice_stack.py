@@ -14,6 +14,7 @@ class Stack:
         return self.items.pop()
 
     def peek(self):
+        assert not self.is_empty(),"Cannot peek at an empty stack"
         return self.items[len(self.items) - 1]
 
     def size(self):
@@ -21,11 +22,13 @@ class Stack:
 
 
 
+
+my_stack = Stack()
+print my_stack.peek()
+
 print "enter the number of elements which you want to put in stack"
 
 no_ele = int(raw_input())
-my_stack = Stack()
-
 for i in xrange(no_ele):
     value = int(raw_input())
     my_stack.push(value)
